@@ -1,0 +1,25 @@
+/*
+* Programa que calcula o valor total de um frete com base no peso da carga e no valor do frete por quilo.
+* Autor: Logan Maia
+* 31/09/2025
+*/
+
+import java.util.Scanner;
+import java.text.DecimalFormat;
+
+public class calculoFreteRapido {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        double peso = scanner.nextDouble();
+        double valorPorQuilo = scanner.nextDouble();
+        double valorTotalFrete = peso * valorPorQuilo;
+
+        DecimalFormat df = new DecimalFormat("0.00");
+        String valorFormatado = df.format(valorTotalFrete);
+
+        System.out.println(valorFormatado);
+
+        scanner.close();
+    }
+}
