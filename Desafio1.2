@@ -1,0 +1,35 @@
+/*
+* Autor: Logan Maia
+* Data: 27/08/2025
+* Descrição: código que calcula o valor final de um produto após aplicar um desconto percentual
+*/
+
+import java.util.Scanner;
+import java.text.DecimalFormat;
+
+public class DescontoInteligente {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        // TODO: Leia o valor original do produto:
+        //System.out.println("Digite o valor da compra: ");
+        Double valor = scanner.nextDouble();
+
+        //TODO: Leia a porcentagem de desconto:
+        //System.out.println("Digite o valor do desconto: ");
+        Double valorDesconto = scanner.nextDouble();
+
+        //TODO: Verifique se o desconto está dentro de um intervalo válido:
+        if(valorDesconto > 100 || valorDesconto < 0) {
+            System.out.println("Desconto invalido");
+            //TODO: Calcule o valor final do produto:
+        } else {
+            Double valorFinal = valor - (valor * valorDesconto) / 100;
+
+        //Formata e exibe o valor com duas casas decimais
+        DecimalFormat df = new DecimalFormat("0.00");
+        System.out.println(df.format(valorFinal));
+    }
+
+        scanner.close();
+}
+}//fim do programa
