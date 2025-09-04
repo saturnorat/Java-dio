@@ -8,15 +8,6 @@
 
 Este relatório apresenta o processo de implementação de ferramentas na empresa **SimFarma**, realizado por **Logan Maia**. O objetivo do projeto foi **elencar 3 serviços AWS** para **suportar uma plataforma virtual de farmácia**, contemplando vitrine de produtos, carrinho de compras, upload e validação de receitas, processamento de pedidos e autenticação de usuários, com foco em **escalabilidade, segurança e otimização de custos**.
 
-## Arquitetura (resumo textual)
-
-* **Frontend** hospedado e versionado com *CI/CD*.
-* **Autenticação** de clientes e time farmacêutico com contas e MFA.
-* **Backend serverless** exposto via API REST.
-* **Banco de dados NoSQL** para catálogo, estoque, carrinho e pedidos.
-* **Armazenamento de objetos** para imagens de produtos e anexos de receitas (via módulo de armazenamento do frontend).
-* **Observabilidade** com logs e métricas integrados (CloudWatch) e trilhas de auditoria (CloudTrail).
-
 ## Descrição do Projeto
 
 O projeto foi dividido em **3 etapas**, cada uma associada a um serviço principal da AWS.
