@@ -4,8 +4,6 @@
 **Empresa:** SimFarma
 **Responsável:** Logan Maia
 
-> Observação: setembro possui 30 dias; a data foi ajustada de 31/09/2025 para 30/09/2025.
-
 ## Introdução
 
 Este relatório apresenta o processo de implementação de ferramentas na empresa **SimFarma**, realizado por **Logan Maia**. O objetivo do projeto foi **elencar 3 serviços AWS** para **suportar uma plataforma virtual de farmácia**, contemplando vitrine de produtos, carrinho de compras, upload e validação de receitas, processamento de pedidos e autenticação de usuários, com foco em **escalabilidade, segurança e otimização de custos**.
@@ -83,33 +81,8 @@ Recomenda-se, como próximos passos, avaliar **AWS WAF** (proteção a nível de
 
 ## Anexos
 
-### 1. Diagrama lógico da arquitetura
 
-> Inserir aqui uma imagem (ex.: `docs/arquitetura.png`):
-
-```markdown
-![Arquitetura SimFarma](docs/arquitetura.png)
-```
-
-### 2. Especificação de endpoints (API Gateway)
-
-| Método | Endpoint           | Descrição                            | Autorização        |
-| ------ | ------------------ | ------------------------------------ | ------------------ |
-| GET    | `/produtos`        | Lista produtos disponíveis           | Público            |
-| GET    | `/carrinho`        | Retorna itens do carrinho do usuário | JWT (Cliente)      |
-| POST   | `/carrinho`        | Adiciona item ao carrinho            | JWT (Cliente)      |
-| POST   | `/pedido`          | Cria um pedido a partir do carrinho  | JWT (Cliente)      |
-| POST   | `/receita/validar` | Valida uma receita anexada           | JWT (Farmacêutico) |
-
-### 3. Modelo de tabela DynamoDB
-
-| PK                          | SK                    | Atributos principais                   |
-| --------------------------- | --------------------- | -------------------------------------- |
-| `TENANT#SIMFARMA#PROD#123`  | `PROD#123`            | Nome, Preço, Categoria, Estoque        |
-| `TENANT#SIMFARMA#USER#456`  | `CART#456#2025-09-30` | Itens, Quantidade, Valor total         |
-| `TENANT#SIMFARMA#ORDER#789` | `ORDER#789`           | Status, Data criação, Valor, ReceitaID |
-
-### 4. Fluxo de autenticação e perfis
+### 1. Fluxo de autenticação e perfis
 
 * **Cliente:**
 
@@ -121,7 +94,7 @@ Recomenda-se, como próximos passos, avaliar **AWS WAF** (proteção a nível de
   * Autenticação via grupo especial no Cognito
   * Pode aprovar/reprovar pedidos com medicamentos controlados
 
-### 5. Políticas de acesso (IAM)
+### 2. Políticas de acesso (IAM)
 
 * **Amplify Hosting:** permissões de *deploy* limitadas ao pipeline.
 * **Lambda:** execução apenas com permissões para DynamoDB e S3 específicos.
