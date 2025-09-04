@@ -1,8 +1,8 @@
 # RELATÓRIO DE IMPLEMENTAÇÃO DE SERVIÇOS AWS
 
-**Data:** 30/09/2025
-**Empresa:** SimFarma
-**Responsável:** Logan Maia
+Data: 30/09/2025
+**Empresa: SimFarma
+Responsável: Logan Maia
 
 ## Introdução
 
